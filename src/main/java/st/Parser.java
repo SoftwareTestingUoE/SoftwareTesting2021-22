@@ -15,12 +15,11 @@ public class Parser {
 	}
 	
 	public void addOption(Option option, String shortcut) {
-		optionMap.store(option.getName(), shortcut, option.getType());
+		optionMap.store(option, shortcut);
 	}
 	
-	
 	public void addOption(Option option) {
-		optionMap.store(option.getName(), "", option.getType());
+		optionMap.store(option, "");
 	}
 	
 	public boolean optionExists(String key) {
@@ -218,7 +217,7 @@ public class Parser {
 				
 			}			
 		}
-		
+
 		return 0;
 		
 	}

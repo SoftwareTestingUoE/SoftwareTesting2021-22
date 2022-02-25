@@ -12,17 +12,28 @@ public class OptionMap {
     	shortcuts = new HashMap<String, Option>();
     }
     
-    public void store(String name, String shortcut, Type type) {
-    	Option option = new Option(name, type);
+    public void store(Option option, String shortcut) {
+    	String name = option.getName();
+    	Type type = option.getType();
+    	
     	if (type == Type.NOTYPE || !isOptionValid(option, shortcut)) {
     		throw new IllegalArgumentException("Illegal argument provided in store(....) method.");
     	}
     	
-    	options.put(name, option);
-    	if (!shortcut.equals("")) {
-    		shortcuts.put(shortcut, option);
+    	if (optionExists(name)) {
+    		Option oldOption = getOption(name);
+    		oldOption.setType(type);
+    		
+    		options.put(name, oldOption);
+    		if (!shortcut.equals("")) {
+        		shortcuts.put(shortcut, oldOption);
+        	}
+    	} else {
+        	options.put(name, option);
+        	if (!shortcut.equals("")) {
+        		shortcuts.put(shortcut, option);
+        	}
     	}
-    	
     }
     
     public Option getOption(String key) {
