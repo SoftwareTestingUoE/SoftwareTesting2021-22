@@ -18,7 +18,8 @@ public class CommandLineParserTest {
 	@Test
 	public void example() {
 
-		assertEquals(true, true);
-
+		parser.addOption(new Option("input", Type.STRING), "i");
+		parser.parse("--input 1.txt");
+		assertEquals(parser.getString("input"), "1.txt");
 	}
 }
