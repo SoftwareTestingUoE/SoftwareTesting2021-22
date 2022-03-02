@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class FunctionalTest2_2 {
+public class Task2_2_FunctionalTest {
 	
 	@Test
 	public void test() {
