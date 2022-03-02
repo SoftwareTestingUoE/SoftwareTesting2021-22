@@ -9,5 +9,4 @@ public class TDD1 {
 	@Test
 	public void test() {
 	}
-
 }
