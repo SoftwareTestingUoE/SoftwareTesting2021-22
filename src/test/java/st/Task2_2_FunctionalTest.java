@@ -9,6 +9,4 @@ public class FunctionalTest2_2 {
 	@Test
 	public void test() {
 	}
-
-
 }
